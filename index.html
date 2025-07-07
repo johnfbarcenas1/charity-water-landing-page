@@ -8,71 +8,43 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <!-- Skip link for accessibility -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header role="banner" class="site-header">
+  <header class="site-header">
     <img src="cw_logo.png" alt="charity: water logo" class="logo" />
     <nav class="main-nav">
-      <div class="dropdown">
-        <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="end-thirst-menu">
-          END THIRST &#9662;
-        </button>
-        <ul id="end-thirst-menu" class="dropdown-content" role="menu" aria-label="End Thirst">
-          <li><a href="https://www.charitywater.org/fundraise" target="_blank" role="menuitem">Give to Another Fundraiser</a></li>
-          <li><a href="https://www.charitywater.org/fundraise" target="_blank" role="menuitem">Start Your Fundraiser</a></li>
-          <li><a href="https://www.charitywater.org/fundraise" target="_blank" role="menuitem">Become Brand Ambassador</a></li>
+      <details class="dropdown">
+        <summary class="dropbtn">END THIRST</summary>
+        <ul class="dropdown-content">
+          <li><a href="https://www.charitywater.org/fundraise" target="_blank">Give to Another Fundraiser</a></li>
+          <li><a href="https://www.charitywater.org/fundraise" target="_blank">Start Your Fundraiser</a></li>
+          <li><a href="https://www.charitywater.org/fundraise" target="_blank">Become Brand Ambassador</a></li>
         </ul>
-      </div>
+      </details>
     </nav>
   </header>
 
   <main id="main-content">
-    <section class="hero-section" aria-label="Hero section">
-      <div class="hero-image">
-        <img src="Madagascar_2019_CG-2632.jpg" alt="Smiling girl drawing clean water from a well" />
-      </div>
+    <section class="hero-section">
       <div class="hero-content">
-        <h1 class="headline">LEAD THE CHARGE:<br>TURN PASSION INTO SAFE, TRACKABLE WATER</h1>
-        <p class="subtext">
-          Join activists in funding life‑changing wells. Monitor your impact in real‑time and power systemic change today.
-        </p>
-        <a class="cta-button primary-cta" href="#take-charge">CLICK TO TAKE CHARGE</a>
+        <h1>LEAD THE CHARGE: <span>TURN PASSION INTO SAFE, TRACKABLE WATER</span></h1>
+        <p class="hero-tagline">Join activists in funding life-changing wells. Monitor your impact in real-time and power systemic change today.</p>
+        <a href="#take-charge" class="cta-btn">CLICK TO TAKE CHARGE</a>
+      </div>
+      <div class="hero-image">
+        <img src="Madagascar_2019_CG-2632.jpg" alt="Smiling girl drawing water from a well" />
       </div>
     </section>
 
-    <section class="story" aria-labelledby="story-heading">
-      <h2 id="story-heading" class="visually-hidden">Our Story</h2>
-      <p class="story-body">
-        Ignite your scholar spirit by joining a movement of student activists who transform every dollar into clean, safe water, fueling sustainable projects in communities worldwide. Track your real‑time impact through transparent progress updates and firsthand stories of change. Collaborate with fellow campus changemakers to drive systemic solutions that address water scarcity in marginalized regions. Empower your passion into tangible outcomes, see where your contribution flows and how it reshapes lives.
+    <section class="story">
+      <p>
+        Ignite your scholar spirit by joining a movement of student activists who transform every dollar into clean, safe water, fueling sustainable projects in communities worldwide. Track your real-time impact on the ground through transparent progress updates and firsthand stories of change. Collaborate with fellow campus changemakers to drive systemic solutions that address water scarcity in marginalized regions. Empower your passion into tangible outcomes, see where your contribution flows and how it reshapes lives.
       </p>
-      <a class="cta-button secondary-cta" href="#take-charge">TAKE ACTION NOW</a>
     </section>
   </main>
 
-  <footer class="footer-cta" id="take-charge" role="contentinfo">
-    <a class="cta-button primary-cta" href="/signup.html">CLICK TO TAKE CHARGE</a>
+  <footer id="take-charge">
+    <a href="/signup.html" class="cta-btn">CLICK TO TAKE CHARGE</a>
   </footer>
-
-  <script>
-    // Dropdown accessibility & functionality
-    document.querySelector('.dropbtn').addEventListener('click', function(e) {
-      e.stopPropagation();
-      var menu = document.getElementById('end-thirst-menu');
-      var expanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', !expanded);
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    });
-    // Close dropdown on click outside
-    document.addEventListener('click', function(event) {
-      var dropdown = document.querySelector('.dropdown');
-      var menu = document.getElementById('end-thirst-menu');
-      if (!dropdown.contains(event.target)) {
-        menu.style.display = 'none';
-        document.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
-      }
-    });
-  </script>
 </body>
 </html>
