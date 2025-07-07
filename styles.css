@@ -16,7 +16,7 @@ body {
 }
 .site-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   background: var(--black);
   padding: 1.2rem 2rem 0.5rem 2rem;
@@ -24,14 +24,16 @@ body {
 .logo {
   max-width: 90px;
   height: auto;
+  margin-top: 3px;
 }
 .site-nav {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 14px;
 }
 .dropdown {
   position: relative;
-  margin-left: 1.5rem;
+  margin-left: 0.7rem;
 }
 .dropbtn {
   background: var(--gold);
@@ -40,25 +42,29 @@ body {
   font-weight: bold;
   border: none;
   border-radius: 8px;
-  padding: 0.6rem 1.5rem;
-  font-size: 1.15rem;
+  padding: 0.7rem 1.7rem;
+  font-size: 1.35rem;
   cursor: pointer;
   letter-spacing: 0.5px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
+}
+.dropbtn:hover, .dropbtn:focus {
+  background: var(--accent);
+  color: var(--cream);
 }
 .dropdown-content {
   list-style: none;
   margin: 0; padding: 0;
   background: var(--cream);
-  border-radius: 8px;
+  border-radius: 10px;
   position: absolute;
   top: 120%;
   left: 0;
-  min-width: 220px;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  min-width: 260px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.14);
   display: none;
-  z-index: 999;
+  z-index: 1000;
 }
 .dropdown[open] .dropdown-content {
   display: block;
@@ -69,7 +75,7 @@ body {
   color: var(--navy);
   text-decoration: none;
   font-family: 'Avenir', Arial, sans-serif;
-  font-size: 1.03rem;
+  font-size: 1.12rem;
   border-bottom: 1px solid #eee;
   transition: background 0.15s;
 }
@@ -78,47 +84,6 @@ body {
 }
 .dropdown-content li a:hover,
 .dropdown-content li a:focus {
-  background: var(--neutral-grey);
-}
-
-/* CTA Dropdown (main button) */
-.cta-dropdown {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 1.2em;
-}
-.cta-dropdown-content {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background: var(--cream);
-  border-radius: 10px;
-  position: absolute;
-  left: 0;
-  top: 110%;
-  min-width: 260px;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.14);
-  display: none;
-  z-index: 1000;
-}
-.cta-dropdown[open] .cta-dropdown-content {
-  display: block;
-}
-.cta-dropdown-content li a {
-  display: block;
-  padding: 1rem 1.5rem;
-  color: var(--navy);
-  text-decoration: none;
-  font-family: 'Avenir', Arial, sans-serif;
-  font-size: 1.12rem;
-  border-bottom: 1px solid #eee;
-  transition: background 0.15s;
-}
-.cta-dropdown-content li:last-child a {
-  border-bottom: none;
-}
-.cta-dropdown-content li a:hover,
-.cta-dropdown-content li a:focus {
   background: var(--neutral-grey);
 }
 
@@ -215,9 +180,11 @@ body {
   .canva-left, .canva-right { max-width: 100vw; }
   .canva-left { padding: 36px 12px 18px 12px; }
   .hero-img { border-radius: 0; height: 50vw; min-width: 220px; max-width: 90vw; }
+  .site-header { flex-direction: column; align-items: flex-start; }
+  .site-nav { gap: 8px; }
 }
 @media (max-width: 600px) {
   .canva-left h1 { font-size: 1.34rem; }
   .subtitle, .body-copy { font-size: 1rem; }
-  .cta-btn { font-size: 1.1rem; padding: 12px 16px; }
+  .cta-btn, .dropbtn { font-size: 1.1rem; padding: 12px 16px; }
 }
