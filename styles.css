@@ -81,6 +81,47 @@ body {
   background: var(--neutral-grey);
 }
 
+/* CTA Dropdown (main button) */
+.cta-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.2em;
+}
+.cta-dropdown-content {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  top: 110%;
+  min-width: 260px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.14);
+  display: none;
+  z-index: 1000;
+}
+.cta-dropdown[open] .cta-dropdown-content {
+  display: block;
+}
+.cta-dropdown-content li a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: var(--navy);
+  text-decoration: none;
+  font-family: 'Avenir', Arial, sans-serif;
+  font-size: 1.12rem;
+  border-bottom: 1px solid #eee;
+  transition: background 0.15s;
+}
+.cta-dropdown-content li:last-child a {
+  border-bottom: none;
+}
+.cta-dropdown-content li a:hover,
+.cta-dropdown-content li a:focus {
+  background: var(--neutral-grey);
+}
+
 .canva-hero {
   display: flex;
   min-height: 90vh;
@@ -153,7 +194,6 @@ body {
   cursor: pointer;
   text-decoration: none;
   box-shadow: 0 4px 18px rgba(0,0,0,0.11);
-  margin-bottom: 0.2em;
   transition: background 0.19s, color 0.19s;
 }
 .cta-btn:hover, .cta-btn:focus {
