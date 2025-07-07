@@ -7,27 +7,95 @@
   --accent: #BF6C46;
   --neutral-grey: #CBCCD1;
 }
-
 body {
   margin: 0;
   padding: 0;
   background: var(--black);
-  font-family: Georgia, 'Avenir', 'Proxima Nova', Arial, sans-serif;
   color: var(--cream);
+  font-family: Georgia, 'Avenir', 'Proxima Nova', Arial, sans-serif;
 }
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--black);
+  padding: 1.2rem 2rem 0.5rem 2rem;
+}
+.logo {
+  max-width: 90px;
+  height: auto;
+}
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+.dropdown {
+  position: relative;
+  margin-left: 1.5rem;
+}
+.dropbtn {
+  background: var(--gold);
+  color: var(--black);
+  font-family: 'Avenir', Arial, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.15rem;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: background 0.2s;
+}
+.dropdown-content {
+  list-style: none;
+  margin: 0; padding: 0;
+  background: var(--cream);
+  border-radius: 8px;
+  position: absolute;
+  top: 120%;
+  left: 0;
+  min-width: 220px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  display: none;
+  z-index: 999;
+}
+.dropdown[open] .dropdown-content {
+  display: block;
+}
+.dropdown-content li a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: var(--navy);
+  text-decoration: none;
+  font-family: 'Avenir', Arial, sans-serif;
+  font-size: 1.03rem;
+  border-bottom: 1px solid #eee;
+  transition: background 0.15s;
+}
+.dropdown-content li:last-child a {
+  border-bottom: none;
+}
+.dropdown-content li a:hover,
+.dropdown-content li a:focus {
+  background: var(--neutral-grey);
+}
+
 .canva-hero {
   display: flex;
+  min-height: 90vh;
   justify-content: space-between;
   align-items: stretch;
-  min-height: 100vh;
+  background: var(--black);
 }
 .canva-left {
-  flex: 1.3;
+  flex: 1.5;
   padding: 48px 48px 32px 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: var(--black);
+  max-width: 55%;
 }
 .canva-right {
   flex: 1;
@@ -36,52 +104,41 @@ body {
   justify-content: flex-end;
   background: none;
   overflow: hidden;
+  max-width: 48vw;
 }
 .hero-img {
-  max-width: 100%;
-  max-height: 88vh;
-  border-radius: 0 0 0 320px;
+  width: 100%;
+  height: 92vh;
+  min-width: 340px;
+  max-width: 660px;
+  border-bottom-left-radius: 340px;
   object-fit: cover;
-  box-shadow: 0 4px 30px rgba(0,0,0,0.22);
-  margin-right: -40px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.18);
 }
 .canva-left h1 {
-  font-family: Georgia, serif;
   color: var(--gold);
-  font-size: 2.5rem;
+  font-family: Georgia, serif;
+  font-size: 2.8rem;
   font-weight: bold;
-  line-height: 1.14;
-  margin-bottom: 20px;
-  margin-top: 0;
-  text-align: center;
+  line-height: 1.12;
+  margin: 0 0 20px 0;
+  text-align: left;
 }
 .canva-left h1 span {
   display: block;
-  margin-top: 0.3em;
+  margin-top: 0.22em;
 }
 .subtitle {
   color: var(--cream);
-  font-size: 1.35rem;
-  margin-bottom: 30px;
-  text-align: center;
+  font-size: 1.34rem;
+  margin-bottom: 26px;
   font-family: 'Avenir', Arial, sans-serif;
+  text-align: left;
 }
 .divider {
   border: none;
   border-top: 4px solid var(--neutral-grey);
-  margin: 22px 0;
-}
-.cta-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  justify-content: center;
-  margin-bottom: 0.5em;
-}
-.cw-logo {
-  height: 52px;
-  width: auto;
-  margin-right: 6px;
+  margin: 30px 0 24px 0;
 }
 .cta-btn {
   display: inline-block;
@@ -90,36 +147,37 @@ body {
   font-family: 'Avenir', Arial, sans-serif;
   font-weight: 700;
   font-size: 2rem;
-  padding: 12px 36px;
+  padding: 14px 38px;
   border: none;
-  border-radius: 16px;
+  border-radius: 15px;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.11);
+  margin-bottom: 0.2em;
+  transition: background 0.19s, color 0.19s;
 }
-.cta-btn:hover,
-.cta-btn:focus {
+.cta-btn:hover, .cta-btn:focus {
   background: var(--accent);
   color: var(--cream);
 }
 .body-copy {
   color: var(--cream);
-  margin-top: 16px;
-  font-size: 1.15rem;
-  max-width: 98%;
+  font-size: 1.12rem;
+  margin-top: 18px;
+  max-width: 99%;
+  line-height: 1.55;
   text-align: left;
 }
 
 /* Responsive */
-@media (max-width: 950px) {
+@media (max-width: 1050px) {
   .canva-hero { flex-direction: column; }
-  .canva-left, .canva-right { flex: none; width: 100%; }
-  .hero-img { border-radius: 0; margin: 0 auto; max-width: 90vw; }
-  .canva-left { padding: 36px 12px 20px 12px; }
+  .canva-left, .canva-right { max-width: 100vw; }
+  .canva-left { padding: 36px 12px 18px 12px; }
+  .hero-img { border-radius: 0; height: 50vw; min-width: 220px; max-width: 90vw; }
 }
 @media (max-width: 600px) {
-  .canva-left h1 { font-size: 1.25rem; }
+  .canva-left h1 { font-size: 1.34rem; }
   .subtitle, .body-copy { font-size: 1rem; }
-  .cta-btn { font-size: 1.2rem; padding: 12px 18px; }
+  .cta-btn { font-size: 1.1rem; padding: 12px 16px; }
 }
