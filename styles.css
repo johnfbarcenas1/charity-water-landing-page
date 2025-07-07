@@ -29,11 +29,11 @@ body {
 .site-nav {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: 16px;
 }
 .dropdown {
   position: relative;
-  margin-left: 0.7rem;
+  margin-left: 0;
 }
 .dropbtn {
   background: var(--gold);
@@ -48,11 +48,22 @@ body {
   letter-spacing: 0.5px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: background 0.2s, color 0.2s;
+  display: inline-block;
 }
 .dropbtn:hover, .dropbtn:focus {
   background: var(--accent);
   color: var(--cream);
 }
+/* Big button style for CTA in main */
+.cta-btn {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 18px 44px;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .dropdown-content {
   list-style: none;
   margin: 0; padding: 0;
@@ -145,25 +156,6 @@ body {
   border: none;
   border-top: 4px solid var(--neutral-grey);
   margin: 30px 0 24px 0;
-}
-.cta-btn {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--black);
-  font-family: 'Avenir', Arial, sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
-  padding: 14px 38px;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.11);
-  transition: background 0.19s, color 0.19s;
-}
-.cta-btn:hover, .cta-btn:focus {
-  background: var(--accent);
-  color: var(--cream);
 }
 .body-copy {
   color: var(--cream);
